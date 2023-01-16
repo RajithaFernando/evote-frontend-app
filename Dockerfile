@@ -7,7 +7,7 @@ WORKDIR /opt/frontend
 COPY package.json ./
 COPY build ./
 
-# RUN npm install
+RUN npm install
 
 
 COPY . .
