@@ -5,15 +5,15 @@ WORKDIR /opt/frontend
 
 
 COPY package.json ./
+COPY build ./
 
-
-RUN npm install
+# RUN npm install
 
 
 COPY . .
 
 
-RUN npm run build
+# RUN npm run build
 
 
 FROM nginx:1.19
@@ -22,4 +22,4 @@ FROM nginx:1.19
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
 
-COPY --from=build /react-app/build /usr/share/nginx/html
+COPY --from=build /opt/frontend/build /usr/share/nginx/html
