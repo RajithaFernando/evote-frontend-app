@@ -28,4 +28,4 @@ EXPOSE 3000
 
 # CMD ["nginx", "-g", "daemon off;"]
 
-CMD ["npm", "serve", "--port 4000"]
+CMD ["npm", "serve", "--port 3000"]
