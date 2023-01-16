@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Cloning our Git') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/RajithaFernando/evote-frontend-app]])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/RajithaFernando/evote-frontend-app']])
                 
                 sh 'whoami'
                 
