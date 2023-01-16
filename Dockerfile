@@ -7,7 +7,7 @@ WORKDIR /opt/frontend
 COPY package.json ./
 COPY build ./
 
-RUN npm install
+# RUN npm install
 
 
 COPY . .
@@ -18,6 +18,7 @@ COPY . .
 
 FROM nginx:1.19
 
+RUN npm install -g serve
 
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
@@ -25,6 +26,7 @@ COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /opt/frontend/build /usr/share/nginx/html
 
 EXPOSE 3000
+
 
 # CMD ["nginx", "-g", "daemon off;"]
 
