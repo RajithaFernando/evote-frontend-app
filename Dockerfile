@@ -26,4 +26,6 @@ COPY --from=build /opt/frontend/build /usr/share/nginx/html
 
 EXPOSE 3000
 
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["npm", "serve", "--port 4000"]
